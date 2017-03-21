@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predix UI</title>
+
+    <script type="text/javascript">
+    (function() {
+      'use strict';
+
+      var onload = function() {
+        if (!window.HTMLImports) {
+          document.dispatchEvent(
+            new CustomEvent('WebComponentsReady', {bubbles: true})
+          );
+        }
+      };
+
+      var webComponentsSupported = (
+        'registerElement' in document && 'import' in document.createElement('link') && 'content' in document.createElement('template')
+      );
+
+      if (!webComponentsSupported) {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '../webcomponentsjs/webcomponents-lite.min.js';
+        script.onload = onload;
+        document.head.appendChild(script);
+      } else {
+        onload();
+      }
+    })();
+    </script>
+
+    <link rel="import" href="../polymer/polymer.html" />
+    <link defer rel="import" href="../px-card/px-card.html">
+    <link async rel="import" href="demo/themed-nested-web-component-demo.html">
+
+    <link defer rel="import" href="css/px-multi-theme-cards-styles.html">
+    <style include="px-multi-theme-cards-styles" is="custom-style"></style>
+
+    <link defer rel="import" href="../px-colors-design/colors-shared-styles.html">
+    <style include="colors-shared-styles" is="custom-style"></style>
+
+    <link defer rel="import" href="../px-theme/px-theme-styles.html">
+    <style include="px-theme-styles" is="custom-style"></style>
+
+    <style is="custom-style">
+      body{
+        /*background: --px-gray3;*/
+        background-color: var(--px-gray3);
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <themed-nested-web-component-demo class="u-m"></themed-nested-web-component-demo>
+    <button class="u-mt btn btn--large btn--primary">Hello</button>
+
+    <px-card
+      async
+      class="u-mt"
+      icon="fa-fort-awesome"
+      header-text="Hello"
+      chevron
+        <h4>Hello World</h4>
+        <p>This is the bare minimum you need for a Predix Experience card.</p>
+        <button class="u-mt btn btn--large btn--primary">Hello</button>
+    </px-card>
+
+  </body>
+</html>

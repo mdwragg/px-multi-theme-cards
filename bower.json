@@ -1,0 +1,29 @@
+{
+  "name": "px-multi-theme-cards",
+  "version": "0.7.1",
+  "main": [
+    "index.html"
+  ],
+  "ignore": [
+    "**/.*",
+    "npm-debug.log",
+    "gulpfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test",
+    "OSS_Notice.pdf",
+    "scripts",
+    ".github",
+    "*.png",
+    "*.md"
+  ],
+  "dependencies": {
+    "polymer": "^v1.6.1",
+    "px-theme": "^2.0.1"
+  },
+  "devDependencies": {
+    "px-buttons-design": "^1.1.4",
+    "px-spacing-design": "^0.4.4"
+  }
+}
