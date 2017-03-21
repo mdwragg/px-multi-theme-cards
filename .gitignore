@@ -1,7 +1,7 @@
 node_modules
 .DS_Store
 temp
-bower_components
+/bower_components/
 .idea
 reports
 css/noprefix/
